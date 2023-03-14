@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-style: normal;
+}
+body{
+    font-family:'NanumSquareNeo-Variable','Apple SD Gothic Neo',Sans-serif;
+    overflow-y: scroll;
+}
+
+
+.logo{
+    width: 50%;
+}
+
+.baby_title{
+    font-weight: 595;
+    font-size: 52px;
+    word-break: keep-all;
+    text-align: center;
+}
+.out_box{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 50px;
+}
+
+.pass_box{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.pass_inner{
+    background-color: #F7F7F7;
+    border-radius: 40px;
+    padding: 0px 30px;
+}

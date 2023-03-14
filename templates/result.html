@@ -17,53 +17,60 @@
         <a href="{% url 'home' %}"> <img class="navlogo_mobile" src={% static './img/navlogo.png' %}/></a>
       </div>
     </div>
-    {% if passer %}
+    <div class="out_box">
       <div class="pass_box">
+        <div class="baby_title">합격자 조회</div>
+          {% if passer %}
+              <div class="pass_inner">
 
-          <div>축하합니다! </div>
+                <div>축하합니다! </div>
 
-          <strong>{{ name }}님</strong>
+                <strong>{{ name }}님</strong>
 
-          <div>덕성여자대학교 멋쟁이사자처럼 11기 최종 합격되신 것을 축하드립니다!</div>
+                <div>덕성여자대학교 멋쟁이사자처럼 11기 최종 합격되신 것을 축하드립니다!</div>
 
-          <div>지원부터 면접까지 최선을 다해 주신 지원자분께 좋은 소식을 알려드리게 되어 기쁩니다.</div>
+                <div>지원부터 면접까지 최선을 다해 주신 지원자분께 좋은 소식을 알려드리게 되어 기쁩니다.</div>
 
-          <div>아래 노션 링크 확인해주시고 디스코드 접속도 완료해주시길 바랍니다.
+                <div>아래 노션 링크 확인해주시고 디스코드 접속도 완료해주시길 바랍니다.</div>
 
-            <a href="https://www.notion.so/cbc2f15993da4e11b5b622e82c1fd93b">🔗  노션 : https://www.notion.so/cbc2f15993da4e11b5b622e82c1fd93b</a>
-            <a href="https://discord.gg/b8dF6KeQ">🔗  디스코드 : https://discord.gg/b8dF6KeQ</a>
-          </div>
+                <div><a href="https://www.notion.so/cbc2f15993da4e11b5b622e82c1fd93b">🔗  노션 : https://www.notion.so/cbc2f15993da4e11b5b622e82c1fd93b</a></div>
+                <div><a href="https://discord.gg/b8dF6KeQ">🔗  디스코드 : https://discord.gg/b8dF6KeQ</a></div>
+                
 
-          <div>더불어 아래 링크의 폼 제출을 3월 15일 23:59까지 완료해주시기 바랍니다.
+                <div>더불어 아래 링크의 폼 제출을 3월 15일 23:59까지 완료해주시기 바랍니다.</div>
 
-            🔗  구글폼 : [https://forms.gle/7w2iNGrgiXz9tZ45A](https://forms.gle/7w2iNGrgiXz9tZ45A)
-          </div>
-          <div>추후 자세한 내용은 합류 후 Discord를 통해 안내해드리겠습니다!</div>
-          <div>기타 궁금하신 사항은 대표 혹은 운영진에게 메시지 보내주시길 바랍니다.<br>감사합니다.</div>
-          <img src="{% static 'img/likelionds.png' %}">
-      </div>
+                  <div><a href="https://forms.gle/7w2iNGrgiXz9tZ45A">🔗  구글폼 : https://forms.gle/7w2iNGrgiXz9tZ45A</a></div>
+                
+
+                <div>추후 자세한 내용은 합류 후 Discord를 통해 안내해드리겠습니다!</div>
+                <div>기타 궁금하신 사항은 대표 혹은 운영진에게 메시지 보내주시길 바랍니다.</div>
+                <div>감사합니다.</div>
+                <img class="logo" src="{% static 'img/likelionds.png' %}">
+              </div>
         
 
-    <!--불합격자 명단에 있으면-->
-    {% elif fail %}
-      안녕하세요. 덕성여자대학교 멋쟁이사자처럼입니다.
+      <!--불합격자 명단에 있으면-->
+      {% elif fail %}
+        안녕하세요. 덕성여자대학교 멋쟁이사자처럼입니다.
 
-      덕성여자대학교 멋쟁이사자처럼 11기 모집에 지원해주셔서 감사합니다. 
+        덕성여자대학교 멋쟁이사자처럼 11기 모집에 지원해주셔서 감사합니다. 
 
-      {{ name }} 님의 뛰어난 역량과 잠재력에도 불구하고 안타깝게도 이번 모집에서는 지원자님을 모실 수 없게 되었습니다.  
+        {{ name }} 님의 뛰어난 역량과 잠재력에도 불구하고 안타깝게도 이번 모집에서는 지원자님을 모실 수 없게 되었습니다.  
 
-      좋은 소식을 전해드리지 못해 죄송스럽게 생각하며, 지원해주신 모든 분들께 행복이 가득하기를 기원합니다.
+        좋은 소식을 전해드리지 못해 죄송스럽게 생각하며, 지원해주신 모든 분들께 행복이 가득하기를 기원합니다.
 
-      덕성여자대학교 멋쟁이사자처럼 드림.
-
-    <!-- 합격자, 불합격자 명단에 없으면 -->
-    {% else %}
-    <script language="javascript">
-      alert("입력한 정보를 다시 확인해주세요.");
+        덕성여자대학교 멋쟁이사자처럼 드림.
       
-    </script>
+      <!-- 합격자, 불합격자 명단에 없으면 -->
+      {% else %}
+      <script language="javascript">
+        alert("입력한 정보를 다시 확인해주세요.");
+        
+      </script>
 
-    {% endif %}
-    <button onclick="self.close();">닫기</button>
+      {% endif %}
+      <button onclick="self.close();">닫기</button>
+      </div>
+    </div>
   </body>
 </html>
