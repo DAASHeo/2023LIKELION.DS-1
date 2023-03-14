@@ -1,4 +1,5 @@
 from django.db import models
+from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
 class Post(models.Model):
@@ -15,3 +16,11 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"{self.post} _______ {self.comment}" 
+    
+class babyLion(models.Model):
+    name = models.CharField(max_length=5, null=False)
+    phone_num = PhoneNumberField()
+    email = models.EmailField(verbose_name='email')
+
+    def __str__(self):
+        return self.name

@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Post, Comment
+from .models import Post, Comment, babyLion
 from django.utils import timezone
 from django.core.paginator import Paginator
+from dsapp.forms import ViewBabylionForm
 # Create your views here.
 
 def main(request):
@@ -36,3 +37,23 @@ def org(request):
 
 def recruit(request):
     return render(request, 'recruit.html')
+
+def babylion(request):
+    if request.method == 'POST':
+        form = ViewBabylionForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data.get("name")
+            phone_num = form.cleaned_data.get("phone_num")
+            email = form.cleaned_data.get("email")
+
+            passer = babyLion.objects.filter(name=name).filter(phone_num=phone_num).filter(email=email)
+
+            return render(request, 'result.html', {'passer':passer, 'name':name})
+        
+        return redirect('babylion')
+    else:
+        form = ViewBabylionForm()
+    return render(request, 'babylion.html',{'form':form})
+
+def result(request):
+    return render(request, 'result.html')
