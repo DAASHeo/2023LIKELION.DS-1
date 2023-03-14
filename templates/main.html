@@ -18,7 +18,7 @@
         </div>
         <div class="sec1textbox">
           <div class="textbox">2023 덕성여자대학교 멋쟁이사자처럼에서는 개발에 대한 열정과<br>빛나는 아이디어를 갖고 있는 11기 아기사자를 기다리고 있습니다.</div>
-          <a href="https://forms.gle/C5i9NqXasCF6Kp2M7"><div class="gobtn">지원하러가기 ></div></a>
+          <a onclick="showPopup();"><div class="gobtn">결과보러가기 ></div></a>
         </div>
       </div>
   </div>
@@ -30,7 +30,7 @@
         </video>
         <div class="sec1textbox_mobile">
           <div class="textbox_moblie">2023 덕성여자대학교 멋쟁이사자처럼에서는 개발에 대한 열정과<br>빛나는 아이디어를 갖고 있는 11기 아기사자를 기다리고 있습니다.</div>
-          <a href="https://forms.gle/C5i9NqXasCF6Kp2M7"><div class="gobtn">지원하러가기 ></div></a>
+          <a onclick="showPopup();"><div class="gobtn">결과보러가기 ></div></a>
         </div>
       </div>
     </div>
@@ -150,5 +150,8 @@
     </div>
   </div>
   <script src="/static/js/autoplay.js"></script>
+  <script language="javascript">
+    function showPopup() { window.open("babylion", "결과 확인", "width=1000, height=600, left=100, top=50"); }
+  </script>
 </body>
 {% endblock %}
