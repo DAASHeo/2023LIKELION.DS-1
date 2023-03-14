@@ -27,6 +27,6 @@ urlpatterns = [
     path('org/', views.org, name="org"),
     path('recruit/', views.recruit, name="recruit"),
 
-    path('babylion/', views.babylion, name="babyLion"),
+    path('babylion/', views.babylion, name="babylion"),
     path('result/', views.result, name="result")
 ]

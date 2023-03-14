@@ -10,11 +10,11 @@
 
   <body>
     <div class="navbar">
-      <a href="{% url 'home' %}"> <img class="navlogo" src={% static './img/navlogo.png' %}/> </a>
+      <a href="{% url 'home' %}"> <img class="navlogo" src="{% static './img/navlogo.png' %}"/> </a>
     </div>
     <div class="navbar_wrap">
       <div class="navbar_mobile" >
-        <a href="{% url 'home' %}"> <img class="navlogo_mobile" src={% static './img/navlogo.png' %}/></a>
+        <a href="{% url 'home' %}"> <img class="navlogo_mobile" src="{% static './img/navlogo.png' %}"></a>
       </div>
     </div>
     <div class="out_box">
@@ -60,17 +60,17 @@
         좋은 소식을 전해드리지 못해 죄송스럽게 생각하며, 지원해주신 모든 분들께 행복이 가득하기를 기원합니다.
 
         덕성여자대학교 멋쟁이사자처럼 드림.
-      
+
       <!-- 합격자, 불합격자 명단에 없으면 -->
       {% else %}
-      <script language="javascript">
-        alert("입력한 정보를 다시 확인해주세요.");
-        
-      </script>
 
-      {% endif %}
-      <button onclick="self.close();">닫기</button>
-      </div>
+      {% for message in messages %}
+        {{ message }}
+      {% endfor %}
+      <input class="uploadBtn" type="submit" value="돌아가기" onclick="history.back();">
+        
+    {% endif %}
+    <button onclick="self.close();">닫기</button>
     </div>
   </body>
 </html>
