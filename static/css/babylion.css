@@ -1,0 +1,18 @@
+.box_wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.box_inner{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+}
