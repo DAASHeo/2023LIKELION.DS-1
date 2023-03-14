@@ -10,11 +10,11 @@
 
   <body>
     <div class="navbar">
-      <a href="{% url 'home' %}"> <img class="navlogo" src={% static './img/navlogo.png' %}/> </a>
+      <a href="{% url 'home' %}"> <img class="navlogo" src="{% static './img/navlogo.png' %}"/> </a>
     </div>
     <div class="navbar_wrap">
       <div class="navbar_mobile" >
-        <a href="{% url 'home' %}"> <img class="navlogo_mobile" src={% static './img/navlogo.png' %}/></a>
+        <a href="{% url 'home' %}"> <img class="navlogo_mobile" src="{% static './img/navlogo.png' %}"></a>
       </div>
     </div>
     {% if passer %}
@@ -58,12 +58,13 @@
 
     <!-- 합격자, 불합격자 명단에 없으면 -->
     {% else %}
-    <script language="javascript">
-      alert("입력한 정보를 다시 확인해주세요.");
-      
-    </script>
 
-    {% endif %}
-    <button onclick="self.close();">닫기</button>
+    {% for message in messages %}
+      {{ message }}
+    {% endfor %}
+    <input class="uploadBtn" type="submit" value="돌아가기" onclick="history.back();">
+      
+   {% endif %}
+
   </body>
 </html>

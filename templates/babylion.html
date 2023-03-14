@@ -10,20 +10,20 @@
 
   <body>
     <div class="navbar">
-      <a href="{% url 'home' %}"> <img class="navlogo" src={% static './img/navlogo.png' %}/> </a>
+      <a href="{% url 'home' %}"> <img class="navlogo" src="{% static './img/navlogo.png' %}"/> </a>
     </div>
     <div class="navbar_wrap">
       <div class="navbar_mobile" >
-        <a href="{% url 'home' %}"> <img class="navlogo_mobile" src={% static './img/navlogo.png' %}/></a>
+        <a href="{% url 'home' %}"> <img class="navlogo_mobile" src="{% static './img/navlogo.png' %}"/></a>
       </div>
     </div>
 
     <div class="box_wrap">
       <div class="box_inner">
+        
         <div class="baby_title">합격자 조회</div>
-
         <div class="baby_comment">지원서에 기재하신 이름, 전화번호, 이메일을 입력하세요.</div>
-
+        
         <form class="main" action="" method="POST" enctype="multipart/form-data">
           {% csrf_token %}
               
@@ -32,6 +32,7 @@
             {{ form.phone_num }}
 
             {{ form.email }}
+            
           <input class="uploadBtn" type="submit" value="조회하기">
         </form>
       </div>
