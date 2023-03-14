@@ -56,6 +56,11 @@ input{
     border-radius: 8px;
     background-color: #F2F2F2;
     border: none;
+    color: black;
+    padding-left: 5px;
+}
+
+input::placeholder{
     color: #B4B4B4;
     padding-left: 5px;
 }
