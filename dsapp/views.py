@@ -3,6 +3,8 @@ from .models import Post, Comment, babyLion, failure
 from django.utils import timezone
 from django.core.paginator import Paginator
 from dsapp.forms import ViewBabylionForm
+from django.core.exceptions import ValidationError 
+from django.contrib import messages
 # Create your views here.
 
 def main(request):
@@ -49,8 +51,10 @@ def babylion(request):
             passer = babyLion.objects.filter(name=name).filter(phone_num=phone_num).filter(email=email)
             fail = failure.objects.filter(name=name).filter(phone_num=phone_num).filter(email=email)
 
+            if not passer and not fail:
+                messages.info(request, '입력 정보를 다시 확인하세요.')
+            
             return render(request, 'result.html', {'passer':passer, 'fail':fail, 'name':name,})
-        
         return redirect('babylion')
     else:
         form = ViewBabylionForm()
