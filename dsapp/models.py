@@ -24,3 +24,11 @@ class babyLion(models.Model):
 
     def __str__(self):
         return self.name
+
+class failure(models.Model):
+    name = models.CharField(max_length=5, null=False)
+    phone_num = PhoneNumberField()
+    email = models.EmailField(verbose_name='email')
+
+    def __str__(self):
+        return self.name

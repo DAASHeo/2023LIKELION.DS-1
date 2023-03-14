@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Post, Comment, babyLion
+from .models import Post, Comment, babyLion, failure
 from django.utils import timezone
 from django.core.paginator import Paginator
 from dsapp.forms import ViewBabylionForm
@@ -47,8 +47,9 @@ def babylion(request):
             email = form.cleaned_data.get("email")
 
             passer = babyLion.objects.filter(name=name).filter(phone_num=phone_num).filter(email=email)
+            fail = failure.objects.filter(name=name).filter(phone_num=phone_num).filter(email=email)
 
-            return render(request, 'result.html', {'passer':passer, 'name':name})
+            return render(request, 'result.html', {'passer':passer, 'fail':fail, 'name':name,})
         
         return redirect('babylion')
     else:
